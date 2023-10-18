@@ -51,7 +51,6 @@ This project is licensed under the [MIT License](LICENSE.md) - see the [LICENSE.
 
 - [Kotlin](https://kotlinlang.org/): For the programming language.
 - [Ktor](https://ktor.io/): For the HTTP client library.
-- [Your Web API Source]: For providing the bird data.
 
 ## Contact
 
@@ -59,4 +58,4 @@ For any questions or suggestions, feel free to reach out to the project maintain
 
 ## Authors
 
-- [Your Name](https://github.com/your-username)
+- [Jitendra Prajapati](https://github.com/jk2pr)
