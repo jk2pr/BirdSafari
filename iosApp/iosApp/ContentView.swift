@@ -5,7 +5,9 @@ struct ContentView: View {
 	let greet = Greeting().greet()
 
 	var body: some View {
-		Text("Hello Jitendra-0")
+        ScrollView {
+            BirdsPage()
+        }.background(Color.red)
 	}
 }
 
