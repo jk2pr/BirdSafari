@@ -12,5 +12,9 @@ fun App() {
     BirdSafariAppTheme {
 
         val birdsViewModel = BirdViewModel(BirdRepository())
-        BirdsPage(uiState = birdsViewModel.birdState, categoryState = birdsViewModel.categoryState, onSelectCategory = { birdsViewModel.selectCategory(it) })
+        BirdsPage(
+            uiState = birdsViewModel.birdState,
+            categoryState = birdsViewModel.categoryState,
+            onSelectCategory = { birdsViewModel.selectCategory(it) })
     }
+}
