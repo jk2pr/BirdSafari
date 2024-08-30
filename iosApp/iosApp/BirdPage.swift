@@ -16,30 +16,35 @@ struct BirdsPage: View {
     
    
     var body: some View {
-        VStack {
-            HStack {
-                ForEach(viewModel.uiState.categories, id: \.self) { category in
-                    Button(action: {
-                        viewModel.selectCategory(category: category)
-                    }, label: {
-                        Text(category)
-                            .padding(5)
-                    })
-                    .aspectRatio(1.0, contentMode: .fit)
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .padding(5)
-                    .background(Color.yellow)
-
-                }
-            }
-            if !viewModel.uiState.selectedImages.isEmpty {
-                LazyVGrid(columns: [GridItem(.flexible(), spacing: 5), GridItem(.flexible(), spacing: 5)], spacing: 5, content: {
-                    ForEach(viewModel.uiState.selectedImages, id: \.self) { image in
-                        BirdImageCell(image: image)
+        ScrollView {
+            VStack(alignment: .center ) {
+                HStack {
+                    ForEach(viewModel.uiState.categories, id: \.self) { category in
+                        Button(action: {
+                            viewModel.selectCategory(category: category)
+                        }) {
+                            HStack {
+                                Text(category)
+                                    .frame(minWidth: 0, maxWidth: .infinity)
+                                    .padding(5)
+                                
+                            }
+                        }
+                        .padding(5)
+                        .background(Color.yellow)
                     }
-                })
-                .padding(5)
-            }
+                }
+                
+                if !viewModel.uiState.selectedImages.isEmpty {
+                    LazyVGrid(columns: [GridItem(.flexible(), spacing: 5), GridItem(.flexible(), spacing: 5)], spacing: 5, content: {
+                        ForEach(viewModel.uiState.selectedImages, id: \.self) { image in
+                            BirdImageCell(image: image)
+                        }
+                    })
+                    .padding(5)
+                }
+            }.background(Color.blue)
+                .frame(maxHeight: .infinity)
         }
     }
 }

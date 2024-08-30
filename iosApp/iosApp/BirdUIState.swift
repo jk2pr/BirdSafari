@@ -18,6 +18,6 @@ struct BirdsUiState {
     }
     
     var selectedImages: [BirdImage] {
-        images.filter { $0.category == selectedCategory }
+        images.filter { $0.category == selectedCategory ?? categories.first}
     }
 }
